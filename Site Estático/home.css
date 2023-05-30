@@ -76,7 +76,7 @@
     margin-top: 180px;
   }
 
-  p {
+  #strenght {
     font-size: 35px;
   }
 
@@ -90,14 +90,24 @@
   .botao {
     display: flex;
     justify-content: center;
+    position: relative;
+    transition: all 0.3s ease-out;
+    border: none;
+    
+  }
+  .botao:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0);
   }
 
   button {
     color: black;
+    border-radius: 40px;
     height: 50px;
     width: 150px;
     font-size: 20px;
     background-color: rgba(255, 255, 255, 0.507);
+    
   }
   
   .backgroundWhite{
@@ -159,17 +169,24 @@
   .tela_guias {
     display: flex;
     flex-direction: row; 
-    padding-left: 120px;
+    padding-left: 45px;
     gap: 150px;
   }
+
+
 
 
   h1 {
     display: flex;
     justify-content: center;
     color: black;
-    
+    margin-bottom: 100px ;
   }
+
+.bloco-cinza:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0);
+}
 
   .bloco-cinza {
     display: flex;
@@ -180,6 +197,9 @@
     border-radius: 40px ;
     justify-content: center;
     align-items: center;
+    position: relative;
+    transition: all 0.3s ease-out;
+    border: none;
   
   }
 
@@ -187,7 +207,7 @@
     
     height: 250px;
     width: 200px;
-    padding-bottom: 30px;
+    margin-bottom: 30px;
     
   }
 
@@ -195,12 +215,69 @@
     
     height: 250px;
     width: 300px;
-    padding-bottom: 30px;
+    margin-bottom: 30px;
   }
 
   .crescer {
     
     height: 250px;
     width: 400px;
-    padding-bottom: 30px;
+    margin-bottom: 30px;
   }
+
+  #detalhe {
+    font-size: 30px;
+    display: flex;
+    
+  }
+
+  .botaoSaiba {
+    margin-bottom: 10px;
+  }
+  
+  /* .voltar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+
+  .footer {
+    display: flex;
+    height: 80px;
+    width: 100%;
+    background-color: #272424;
+    color: #ffffff;
+  }
+
+  .voltar {
+    margin-left: 18em;
+  }
+
+  
+
+  .footer img {
+    width: auto;
+    height: 2em;
+    justify-content: center;
+    transition: 0.5 step-start;
+  }
+  
+  .footer div {
+    margin-left: 1em;
+    
+  }
+  
+  .footer ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-left: 25em;
+  }
+  
+  
+  
+  .footer img:hover {
+    height: 30px;
+  }
+
+ 

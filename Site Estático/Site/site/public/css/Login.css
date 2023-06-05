@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Orienta&display=swap');
+
+
+* {
+    margin: 0;
+    color: rgb(255, 255, 255);
+    font-family: 'Orienta';
+}
+
+.backgroundLogin {
+    display: flex;
+    background-image: url(../img/vista-de-angulo-baixo-do-homem-de-construcao-muscular-irreconhecivel-se-preparando-para-levantar-uma-barra-em-um-clube-de-saude.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 665px;
+}
+
+
+
+.background{
+    display: flex;
+    background-color: #1E1E1E90;
+    width: 800px;
+    height: 450px;
+    margin-left: 260px;
+    margin-top: 100px;
+}
+
+h1 {
+    display: flex;
+    margin-bottom: 60px;
+}
+
+span {
+  color: #ff0000;
+  display: none;
+}
+
+.form {
+    gap: 5px;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+}
+
+  .form input {
+    color: black;
+    width: 250px;
+    height: 25px;
+    padding-left: 40px;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: black;
+    background-position: 5%;
+    background-repeat: no-repeat;
+  }
+
+  .esqueceu {
+    display: flex;
+    margin-bottom: 30px;
+    margin-left: 140px;
+  }
+
+  .email {
+    background-image: url(../img/email.png);
+  }
+
+  .senha {
+    background-image: url(../img/password.png);
+  }
+  
+
+  a {
+    text-decoration: none;
+  }
+
+  .form button {
+    height: 30px;
+    width: 300px;
+    font-size: 20px;
+    border-radius: 25px;
+    border-style: none;
+    
+    background-color: #1E1E1E;
+    position: relative;
+    transition: all 0.3s ease-out;
+  }
+
+  .form button:hover {
+    transform: scale(1.1);
+  }
+
+  q {
+    color: rgb(42, 45, 250);
+  }
+
+  .voltar img {
+    height: 30px;
+    position: relative;
+    transition: all 0.3s ease-out;
+    border: none;
+  }
+
+  .voltar img:hover {
+    transform: scale(1.1);
+  }
+
+  /* .underline {
+    background-color: #3172d8;
+    width: 20%;
+    height: 0.6em;
+    border-radius: 0.6em;
+    animation: animation 1.5s linear alternate;
+  }
+
+  @keyframes animation {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 20%;
+    }
+  } */
+

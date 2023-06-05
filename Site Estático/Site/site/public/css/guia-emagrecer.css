@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Orienta&display=swap');
+
+button {
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orienta';
+  background-image: url(../img/como-comecar-academia.png);
+  background-size: cover;
+}
+
+
+
+
+.titulo {
+  color: #000000;
+  width: fit-content;
+  font-weight: 500;
+  text-align: start;
+}
+
+.hello {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.exercicios {
+  display: flex;
+  background-color: #1E1E1E90;
+  color: white;
+  align-items: center;
+  margin-left: 30%;
+  margin-top: 3%;
+  width: 60%;
+  height: 600px;
+  flex-direction: column;
+}
+
+.tela02 .exercicios {
+  display: flex;
+  background-color: #1E1E1E90;
+  color: white;
+  align-items: center;
+  margin-left: 30%;
+  margin-top: 3%;
+  width: 60%;
+  height: 600px;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.tela03 .exercicios {
+  display: flex;
+  background-color: #1E1E1E90;
+  color: white;
+  align-items: center;
+  margin-left: 30%;
+  margin-top: 3%;
+  width: 60%;
+  height: 600px;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.tela04 .exercicios {
+  display: flex;
+  background-color: #1E1E1E90;
+  color: white;
+  align-items: center;
+  margin-left: 30%;
+  margin-top: 3%;
+  width: 60%;
+  height: 600px;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.tela05 .exercicios {
+  display: flex;
+  background-color: #1E1E1E90;
+  color: white;
+  align-items: center;
+  margin-left: 30%;
+  margin-top: 3%;
+  width: 60%;
+  height: 600px;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.tela05 .textoInicio {
+  width: 500px;
+}
+
+.exercicios::-webkit-scrollbar {
+  width: 12px;               
+}
+
+.exercicios::-webkit-scrollbar-track {
+  background: rgb(201, 201, 201);        
+}
+
+.exercicios::-webkit-scrollbar-thumb {
+  background-color: #000000;            
+  border: 3px solid rgb(201, 201, 201); 
+} 
+
+.exercicios h1 {
+  margin-bottom: 6px;
+  font-size: 2em;
+  
+}
+
+.underline {
+  background-color: #ffffff;
+  width: 100%;
+  height: 0.6em;
+  border-radius: 0.5em;
+  animation: animation 1.5s forwards;
+}
+
+@keyframes animation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.textoInicio span {
+  color: red;
+}
+.textoInicio {
+  margin-top: 3%;
+}
+
+/* SESSÃO DE EXERCÍCIOS */
+
+
+.span {
+  margin-top: 12%;
+  width: 330px;
+}
+.exercicios-01 {
+  display: flex;
+  margin-right: 10%;
+} 
+
+.exercicios-02 {
+  display: flex;
+  margin-right: 7%;
+}
+
+.exercicios-03 {
+  display: flex;
+  margin-right: 5%;
+}
+
+.exercicios-04 {
+  display: flex;
+  margin-right: 1%;
+}
+
+.exercicios-05 {
+  display: flex;
+  margin-right: 7%;
+}
+
+.exercicios-06 {
+  display: flex;
+  margin-right: 2%;
+}
+
+.exercicios-07 {
+  display: flex;
+  margin-right: 5%;
+}
+
+.exercicios-08 {
+  display: flex;
+  margin-right: 1%;
+}
+
+.exercicios-09 {
+  display: flex;
+  margin-right: 1%;
+  gap: 1.5%;
+}
+
+.exercicios-10 {
+  display: flex;
+  margin-right: 1%;
+  gap: 4%;
+}
+
+.exercicios-11 {
+  display: flex;
+  margin-right: 1%;
+  gap: 1.5%
+}
+
+.exercicios-12 {
+  display: flex;
+  margin-right: 1%;
+  gap: 5%;
+}
+
+
+
+
+
+
+.btn {
+  font-family: "Barlow", sans-serif;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 15px;
+  color: white;
+  background-color: #e6005a;
+  width: 120px;
+  align-self: center;
+  margin-top: 5px;
+}
+
+
+
+/* PAGINA DOS GRÁFICOS */
+
+.janela {
+  display: flex;
+  width: 100vw;
+}
+
+.header-left a {
+  text-decoration: none;
+  color: white;
+}
+
+.header-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: 100vh;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-right: 3px solid #1E1E1E90;
+  background-color: #33333390 ;
+  /* border: 3px solid pink; */
+}
+
+
+
+.header-left h1 {
+  color: #ffffff;
+}
+
+.hello {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hello h3 {
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+.hello h3 span {
+  font-weight: 800;
+}
+
+.btn-nav {
+  width: 40%;
+  color: white;
+  background-color: #303030;
+  border-radius: 5px;
+  text-align: center;
+  padding: 4% 7%;
+  transition: all 0.3 ease-in;
+}
+
+.btn-nav:hover {
+  transform: scale(1.1);
+}
+
+.btn-nav-white {
+  width: 40%;
+  background-color: #1E1E1E;
+  border: 3px solid #1E1E1E;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2% 5%;
+  transition: all 0.3s ease-out;
+}
+
+.btn-nav-white:hover {
+  transform: scale(1.1);
+}
+
+.btn-nav-white h3 {
+  color: #ffffff;
+  padding: 0;
+  margin: 0;
+}
+
+.btn-nav h3,
+.btn-logout h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-logout {
+  margin: 0;
+  padding: 0;
+  width: 20%;
+  background-color: #303030;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 15px;
+  margin-bottom: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.btn-logout:hover {
+transform: scale(1.1);}
+

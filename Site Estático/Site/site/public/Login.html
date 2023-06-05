@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/Login.css">
+    <link rel="shortcut icon" href="img/imagem_2023-05-09_130319956.png">
+</head>
+<body>
+    <div class="backgroundLogin">
+        <div class="background">
+            <div class="voltar">
+                <a href="index.html"><img src="img/icons8-voltar-24.png"></a>
+            </div>
+          <div class="form">
+
+            <h1>LOGIN</h1>
+  
+            <input type="email" id="ipt_email" placeholder="Email" class="email"/>
+            <span id="span_email">Informe corretamente o email.</span>
+            
+            <input type="password" id="ipt_senha" placeholder="Senha" class="senha"/>
+            <span id="span_senha">Informe corretamente a senha.</span>
+  
+            <a href="">
+              <p class="esqueceu" style="font-size: 15px;">Esqueceu a senha?</p>
+            </a>
+
+            <button type="button" onclick="entrar()" >ENTRAR</button>
+            
+              <p style="font-size: 15px;">Não tem uma conta? <a href="Cadastro.html"><q>Junte-se a nós</q></p>
+            </a>
+          </div> 
+        </div>
+    </div>
+</body>
+</html>
+<script src="js/Login.js"></script>

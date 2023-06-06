@@ -2,16 +2,16 @@
 function validarSessao() {
     // aguardar();
 
-    var email = sessionStorage.EMAIL_USUARIO;
-    var nome = sessionStorage.NOME_USUARIO;
+    var email = sessionStorage.email;
+    var nome = sessionStorage.nome;
 
-    var b_usuario = document.getElementById("b_usuario");
+    var idUsuario = document.getElementById("idUsuario");
 
     if (email != null && nome != null) {
         // window.alert(`Seja bem-vindo, ${nome}!`);
-        b_usuario.innerHTML = nome;
+        ola.innerHTML = nome;
 
-        // finalizarAguardar();
+        finalizarAguardar();
     } else {
         window.location = "../Login.html";
     }
@@ -20,7 +20,7 @@ function validarSessao() {
 function limparSessao() {
     // aguardar();
     sessionStorage.clear();
-    // finalizarAguardar();
+    finalizarAguardar();
     window.location = "../Login.html";
 }
 

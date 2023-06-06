@@ -44,13 +44,12 @@ body {
   color: #ffffff;
 }
 
-
-.titulo {
-  color: #ffffff;
-  width: fit-content;
-  font-weight: 500;
-  text-align: start;
+#titulo {
+  width: 98.1%;
+  border-width: 3px;
 }
+
+
 
 /* 
 .exercicios {
@@ -312,9 +311,9 @@ body {
 
 input {
   margin-bottom: 10px;
-  border: 2px solid #32b9cd;
+  border: 2px solid #262829;
   padding: 10px;
-  text-align: center;
+ 
   border-radius: 10px;
 }
 

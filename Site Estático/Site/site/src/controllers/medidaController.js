@@ -1,16 +1,15 @@
 var medidaModel = require("../models/medidaModel");
 
-function buscarUltimasMedidas(req, res) {
+function listarGuias(req, res) {
 
-    const limite_linhas = 7;
-
+   
     var fkGuia = req.params.guiaServer;
 
-    console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
+   
 
-    medidaModel.buscarUltimasMedidas(fkGuia, limite_linhas).then(function (resultado) {
-        if (resultado.length > 0) {
-            res.status(200).json(resultado);
+    medidaModel.listarGuias(fkGuia).then(function (novoRegistro) {
+        if (novoRegistro.length > 0) {
+            res.status(200).json(novoRegistro);
         } else {
             res.status(204).send("Nenhum resultado encontrado!")
         }
@@ -42,7 +41,7 @@ function buscarMedidasEmTempoReal(req, res) {
 }
 
 module.exports = {
-    buscarUltimasMedidas,
+    listarGuias,
     buscarMedidasEmTempoReal
 
 }

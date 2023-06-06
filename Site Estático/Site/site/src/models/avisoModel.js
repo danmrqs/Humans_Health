@@ -3,18 +3,10 @@ var database = require("../database/config");
 function listar() {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
-        SELECT 
-            a.id AS idAviso,
-            a.titulo,
-            a.descricao,
-            a.fk_usuario,
-            c.id AS idUsuario,
-            c.nome,
-            c.email,
-            c.senha
-        FROM aviso a
-            INNER JOIN cadastro c
-                ON a.fk_usuario = c.id;
+    SELECT idAviso, titulo, descricao, fk_usuario, idUsuario, nome, email 
+    FROM aviso INNER JOIN cadastro 
+    ON fk_usuario = idUsuario
+        
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -42,21 +34,20 @@ function pesquisarDescricao(texto) {
 }
 
 function listarPorUsuario(idUsuario) {
-    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarPorUsuario()");
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarPorUsuario(): ", idUsuario);
     var instrucao = `
         SELECT 
-            a.id AS idAviso,
-            a.titulo,
-            a.descricao,
-            a.fk_usuario,
-            c.id AS idUsuario,
-            c.nome,
-            c.email,
-            c.senha
-        FROM aviso a
-            INNER JOIN cadastro c
-                ON a.fk_usuario = c.id
-        WHERE c.id = ${idUsuario};
+           idAviso,
+            titulo,
+            descricao,
+            fk_usuario,
+            idUsuario,
+            nome,
+            email
+        FROM aviso 
+            INNER JOIN cadastro 
+                ON fk_usuario = idUsuario
+        WHERE idUsuario = ${idUsuario};
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

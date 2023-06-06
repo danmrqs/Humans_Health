@@ -43,11 +43,18 @@ function entrar() {
                   console.log(dados)
       
                   sessionStorage.nome = dados.nome
+                  sessionStorage.idUsuario = dados.idUsuario
                   sessionStorage.fkGuia = dados.fkGuia
       
                   setTimeout(() => {
-      
-                    window.location = "./Comunidade.html"
+                    if (dados.fkGuia == 1) {
+                      window.location = "./Guia-Emagrecer.html"
+                    } else if (dados.fkGuia == 2) {
+                      window.location = "./Guia-Definir.html"
+                    } else if (dados.fkGuia == 3) {
+                      window.location = "./Guia-Crescer.html"
+                    }
+                    
                   }, "1000")
       
                 })

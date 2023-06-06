@@ -1,5 +1,21 @@
 var database = require("../database/config");
 
+function listarGuias(fkGuia) {
+
+    instrucaoSql = ''
+
+    if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+        instrucaoSql = `select nomeGuia, count(*) as contagem from cadastro 
+                        inner join guia on fkGuia = idGuia	
+                       
+                        group by nomeGuia`
+    } else {
+        console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
+        return
+    }
+    return database.executar(instrucaoSql);
+}
+
 function buscarUltimasMedidas(fkGuia, limite_linhas) {
 
     instrucaoSql = ''
@@ -13,17 +29,19 @@ function buscarUltimasMedidas(fkGuia, limite_linhas) {
                     from medida
                     where fk_aquario = ${idAquario}
                     order by id desc`;
-    } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select fkGuia from cadastro 
-                        where fkGuia = ${fkGuia} 
-                        order by id desc limit ${limite_linhas}`;
-    } else {
-        console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
-        return
     }
+    // else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+    //     instrucaoSql = `select fkGuia from cadastro 
+    //                     where fkGuia = ${fkGuia}  
+    //                     order by id desc limit ${limite_linhas}`;
+    // } 
+    // else {
+    //     console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
+    //     return
+    // }
 
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
+    // console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    // return database.executar(instrucaoSql);
 }
 
 function buscarMedidasEmTempoReal(fkGuia) {
@@ -56,6 +74,6 @@ function buscarMedidasEmTempoReal(fkGuia) {
 
 
 module.exports = {
-    buscarUltimasMedidas,
+    listarGuias,
     buscarMedidasEmTempoReal
 }

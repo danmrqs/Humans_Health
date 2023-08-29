@@ -36,6 +36,10 @@ body::-webkit-scrollbar-thumb {
     
 }
 
+b{
+  display: flex;
+  margin-bottom: 15px;
+}
 .container {
     display: flex;
     justify-content: space-between;
@@ -139,6 +143,7 @@ body::-webkit-scrollbar-thumb {
     font-size: 20px;
     background-color: rgba(255, 255, 255, 0.507);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-color: #ffffff;
   }
   
   .backgroundWhite{
@@ -162,14 +167,45 @@ body::-webkit-scrollbar-thumb {
     
   }
 
-  h2 {
+.sobre-titulo h2 {
     color: rgb(238, 236, 236);
     display: flex;
     font-size: 30px;
     margin-left: 30px;
-    
-    
 }
+
+.sorteio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.h2-sorteio h2 {
+  color: #000000;
+  justify-content: center;
+}
+
+.botao-sorteio {
+  margin-top: 2%;
+  position: relative;
+  transition: all 0.3s ease-out;
+  color: white;
+  cursor: pointer;
+  height: 50px;
+  width: 160px;
+  font-size: 20px;
+  border-color: rgb(255, 255, 255);
+  background-color: rgb(87, 81, 81);
+  border-style: none;
+  border-radius: 30px;
+}
+
+.botao-sorteio:hover {
+  transform: scale(1.1);
+  background-color: rgb(0, 0, 0);
+}
+
 
   .texto {
     display: flex;
@@ -272,12 +308,18 @@ body::-webkit-scrollbar-thumb {
   }
 
   #detalhe {
-    font-size: 30px;
+    font-size: 20px;
     display: flex;
-    
+    color: white; 
+    text-align: center;
   }
 
-
+  #detalhe-titulo {
+    font-size: 30px;
+    display: flex;
+    color: white; 
+    text-align: center;
+  }
 
   h4 {
     display: flex;
@@ -306,7 +348,7 @@ body::-webkit-scrollbar-thumb {
   .chartjs {
     display: flex;
     justify-content: center;
-    margin-left: 30%;
+    margin-left: 29.5%;
     max-height: 400px;
     max-width: 550px;
   

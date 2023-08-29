@@ -1,3 +1,19 @@
+function sortear() {
+    var shape = Math.random();
+
+    if (shape > 0.95) {
+        div_msg.innerHTML = `<img src= "../img/christiano-ronaldo-gq-0216-2-removebg-preview.png" height="350px"></img>`
+    } else if (shape > 0.80) {
+        div_msg.innerHTML = `<img src= "../img/muzy.png" height="350px"></img>`
+    } else if (shape > 0.65) {
+        div_msg.innerHTML = `<img src= "../img/fortinho.png" height="350px"></img>`
+    } else if (shape > 0.40) {
+        div_msg.innerHTML = `<img src= "../img/foradeforma.png" height="350px"></img>`
+    } else if (shape > 0) {
+        div_msg.innerHTML = `<img src= "../img/gordao.png" height="350px"></img>`
+    }
+}
+
 
 var label = []
 var dadosGuia = []
@@ -50,7 +66,8 @@ function listarGuias() {
                 console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
                 console.log(`Dados atuais do gráfico:`);
                 
-                
+    // for usado para "puxar" as informações do cadastri, para jogar no dashboard
+    
                 for (var i = 0; i < novoRegistro.length; i++) {
                     
                     label.push(novoRegistro[i].nomeGuia)

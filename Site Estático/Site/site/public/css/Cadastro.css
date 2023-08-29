@@ -11,8 +11,10 @@
     display: flex;
     background-image: url(../img/academia-lotada-5-dicas-para-adaptar-seu-treino__a9507f.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
     width: 100%;
-    height: 665px;
+    height: 696px;
 }
 
 

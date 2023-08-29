@@ -8,8 +8,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Orienta';
-  background-image: url(../img/como-comecar-academia.png);
+  background-color: #161618;
   background-size: cover;
+  position: absolute;
+  background-repeat: no-repeat;
 }
 
 .container {

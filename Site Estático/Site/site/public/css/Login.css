@@ -11,8 +11,10 @@
     display: flex;
     background-image: url(../img/vista-de-angulo-baixo-do-homem-de-construcao-muscular-irreconhecivel-se-preparando-para-levantar-uma-barra-em-um-clube-de-saude.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
     width: 100%;
-    height: 665px;
+    height: 696px;
 }
 
 

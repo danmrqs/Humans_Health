@@ -32,7 +32,7 @@
                 </li>
                 
                 <li>
-                    <a href="Comunidade.html">Comunidade</a>
+                    <a href="#myChart">Gráfico</a>
                 </li>
                 
                 <li>
@@ -61,8 +61,11 @@
 <div class="backgroundWhite">
     <div class="sobre" id="tela-sobre">
         <br>
-        <h2>SOBRE</h2>
-        
+
+        <div class="sobre-titulo">
+            <h2>SOBRE</h2>
+        </div>
+
         <div class="texto">
             Uma das coisas mais importantes para a vida das pessoas é ter uma boa saúde, estar em forma para conseguir viver longos anos. 
             <br><br>
@@ -79,34 +82,46 @@
         </div>
     </div>
 </div>
+<div class="backgroundWhite">
+    <div class="sorteio">
+        <h1>Mini Sorteio</h1>
+        <div class="h2-sorteio">
+            <h2>Esse aqui será seu shape nesse ano:</h2>
+        </div> 
+        <div id="div_msg"></div>
+        <button onclick="sortear()" class="botao-sorteio">Sortear</button>
+        <!-- math.random para sorteio das imagens -->
+    </div>
+</div>
 <h1>Guias</h1>
 <div class="backgroundWhite">
 <div class="tela_guias" id="guias">
 
     <div class="bloco-cinza">
-        <p style="color: white;" id="detalhe">Emagrecer</p>
+        <b style="color: white;" id="detalhe-titulo">Emagrecer</b>
         <img class="emagrecer" src="img/shutterstock_1677593911-scaled-removebg-preview.png" alt="Mulher Gordinha">
-        
+    <b id="detalhe";">Exercícios focados na perda de peso</b>
     </div>
 
     <div class="bloco-cinza">
-        <p style="color: white;" id="detalhe">Definir</p>
+        <b style="color: white;" id="detalhe-titulo">Definir</b>
         <img class="definir" src="img/homem-forte-1513178286128_v2_4x3-removebg-preview.png" alt="Homem Definido">
-        
+        <b id="detalhe">Exercícios focados na definição do seu corpo </b>
     </div>
 
     <div class="bloco-cinza">
-        <p style="color: white;" id="detalhe">Crescer</p>
+        <b style="color: white;" id="detalhe-titulo">Crescer</b>
         <img class="crescer" src="img/bodybuilder-on-mental-and-physical-damage-of-competition-header-1068x566-removebg-preview.png" alt="Bodybuilder">
+        <b id="detalhe">Exercícios para o ganho de massa magra </b>
         
     </div>
 </div>
 <h4>Para saber mais, realize seu cadastro  <a href="Cadastro.html"> agora mesmo</a> </h4>
 </div>
 
-<h1>Gráfico de Guias</h1>
+<h1>Gráfico de Acesso dos Guias</h1>
 
-
+<!-- dashboard para métricas -->
     <canvas id="myChart" class="chartjs"></canvas>
  
 

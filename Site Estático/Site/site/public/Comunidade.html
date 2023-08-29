@@ -78,7 +78,7 @@
                         </form>
                     </div>
                     
-                    <h1>Mural de Avisos</h1>
+                    <h1>Comentários</h1>
                     <div class="div-results">
                         <div id="feed_container" class="feed-container">
                         </div>
@@ -118,7 +118,7 @@
 <script>
 
 
-    var nome = sessionStorage.nome
+    var idUsuario = sessionStorage.idUsuario
     ola.innerHTML = `Olá ${nome}!`;
 
 
@@ -231,7 +231,7 @@
                         spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
                         divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
                         btnEditar.innerHTML = "Editar";
-                        btnDeletar.innerHTML = "Deletar";
+                       
 
                         divPublicacao.className = "publicacao";
                         spanTitulo.id = "inputNumero" + publicacao.idAviso;
@@ -241,21 +241,15 @@
 
                         divButtons.className = "div-buttons"
 
-                        btnEditar.className = "publicacao-btn-editar"
-                        btnEditar.id = "btnEditar" + publicacao.idAviso;
-                        btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
-
-                        btnDeletar.className = "publicacao-btn-editar"
-                        btnDeletar.id = "btnDeletar" + publicacao.idAviso;
-                        btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
+                       
+                       
+                       
 
                         divPublicacao.appendChild(spanID);
                         divPublicacao.appendChild(spanNome);
                         divPublicacao.appendChild(spanTitulo);
                         divPublicacao.appendChild(divDescricao);
                         divPublicacao.appendChild(divButtons);
-                        divButtons.appendChild(btnEditar);
-                        divButtons.appendChild(btnDeletar);
                         feed.appendChild(divPublicacao);
                     }
 

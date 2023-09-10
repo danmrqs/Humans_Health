@@ -1,3 +1,4 @@
+// sorteio dos shapes com math.random()
 function sortear() {
     var shape = Math.random();
 
@@ -18,11 +19,12 @@ function sortear() {
 var label = []
 var dadosGuia = []
 
+// salv
 var fkGuia = sessionStorage.fkGuia
 
 listarGuias()
 
-
+// função do dashboard dos guias
 function listarGuias() {
     
     const labels = [
@@ -66,7 +68,7 @@ function listarGuias() {
                 console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
                 console.log(`Dados atuais do gráfico:`);
                 
-    // for usado para "puxar" as informações do cadastri, para jogar no dashboard
+    // for usado para "puxar" as informações do cadastro, para mandar pro dashboard
     
                 for (var i = 0; i < novoRegistro.length; i++) {
                     

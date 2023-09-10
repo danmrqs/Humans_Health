@@ -1,11 +1,14 @@
 function entrar() {
+    //definindo as variáveis das inputs
     var email = ipt_email.value
     var senha = ipt_senha.value
     var erro = false
 
+    //definindo as bordas das inputs
     ipt_email.style.border = "solid 2px #000000"
     ipt_senha.style.border = "solid 2px #000000"
 
+    //validações das inputs
     if (email == "" || !email.includes("@") || !email.includes(".com")) {
         erro = true
         span_email.style.display = "block"
@@ -22,8 +25,8 @@ function entrar() {
         span_senha.style.display = "none"
     }
 
+    //aqui se inicia o web-data-viz para entrar
     if (erro != true) {
-        
         fetch("/usuarios/entrar", {
             method: "POST",
             headers: {

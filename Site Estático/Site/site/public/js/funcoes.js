@@ -1,4 +1,4 @@
-// sessão
+// validação da sessão do usuário salvando o session storage
 function validarSessao() {
     // aguardar();
 

@@ -1,4 +1,5 @@
 function cadastrar() {
+  //definindo as variáveis das inputs
     var nome = ipt_nome.value
     var telefone = ipt_telefone.value
     var email = ipt_email.value
@@ -7,6 +8,7 @@ function cadastrar() {
     var fkGuia = 0
     var erro = false
     
+    //definindo a borda
     ipt_nome.style.border = "solid 2px #000000";
     ipt_telefone.style.border = "solid 2px #000000";
     ipt_email.style.border = "solid 2px #000000";
@@ -14,7 +16,7 @@ function cadastrar() {
     ipt_confirmacao.style.border = "solid 2px #000000";
     
 
-
+    //validação das inputs
     if (nome == "") {
         erro = true
         ipt_nome.style.border = "solid 2px #ff0000"
@@ -56,6 +58,7 @@ function cadastrar() {
         span_confirmacao.style.display = "none"
     }
 
+    //definindo o número de cada guia, para usar na dashboard
     if (Emagrecer.checked) {
         fkGuia = 1
         
@@ -64,7 +67,8 @@ function cadastrar() {
     } else if (Crescer.checked) {
         fkGuia = 3
     }
-
+    
+    //aqui se inicia o web-data-viz para cadastro
     if (erro != true) {
         fetch("/usuarios/cadastrar", {
             method: "POST",

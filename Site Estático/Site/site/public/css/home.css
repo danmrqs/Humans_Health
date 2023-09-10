@@ -5,6 +5,7 @@
 * {
   margin: 0;
   font-family: 'Orienta';
+  scroll-behavior: smooth
 }
 
 body::-webkit-scrollbar {
@@ -239,7 +240,7 @@ b{
   .tela_guias {
     display: flex;
     flex-direction: row; 
-    margin-left: 90px;
+    margin-left: 100px;
     gap: 150px;
   }
 

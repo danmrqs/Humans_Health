@@ -10,14 +10,15 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body>
+    <!-- div para definir o tamanho do bloco da página -->
     <div class="imgBackground">
     <div class="backgroundBlack">
+        <!-- links no header -->
         <div class="header">
             <div class="container">
                 <div class="logo">
                     <a href="Home.html"><img class="icone" id="iconeLogo" src="img/humans health icone logo.png" alt=""></a>
                 </div>
-                
                 <ul>
                     <li>
                         <a href="Home.html">Home</a>
@@ -44,7 +45,7 @@
     </div>
             
         
-        <div class="nome">
+    <div class="nome">
         <span class="nome">HUMAN'S HEALTH</span>
     </div>
     
@@ -52,9 +53,11 @@
         <p id="strenght">Find Your Strenght</p>
     </div>
     <br>
-        <div class="botao">
-            <button onclick="comece()"> <a href="Cadastro.html">Comece Agora</a></button>
-        </div>
+
+    <!-- botão para iniciar o cadastro -->
+    <div class="botao">
+        <button onclick="comece()"> <a href="Cadastro.html">Comece Agora</a></button>
+    </div>
 </div>
 </div>
 
@@ -83,6 +86,7 @@
     </div>
 </div>
 <div class="backgroundWhite">
+    <!-- sorteio das imagens usando math.random() -->
     <div class="sorteio">
         <h1>Mini Sorteio</h1>
         <div class="h2-sorteio">
@@ -90,12 +94,12 @@
         </div> 
         <div id="div_msg"></div>
         <button onclick="sortear()" class="botao-sorteio">Sortear</button>
-        <!-- math.random para sorteio das imagens -->
     </div>
 </div>
-<h1>Guias</h1>
-<div class="backgroundWhite">
-<div class="tela_guias" id="guias">
+
+    <h1>Guias</h1>
+    <div class="backgroundWhite">
+    <div class="tela_guias" id="guias">
 
     <div class="bloco-cinza">
         <b style="color: white;" id="detalhe-titulo">Emagrecer</b>
@@ -121,7 +125,7 @@
 
 <h1>Gráfico de Acesso dos Guias</h1>
 
-<!-- dashboard para métricas -->
+    <!-- dashboard para métricas -->
     <canvas id="myChart" class="chartjs"></canvas>
  
 
@@ -151,6 +155,7 @@
 
 </body>
 </html>
+<!-- arquivo do javascript para não deixar o código bagunçado -->
 <script src="js/Home.js"></script>
 
 

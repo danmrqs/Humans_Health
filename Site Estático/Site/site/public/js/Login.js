@@ -25,7 +25,7 @@ function entrar() {
         span_senha.style.display = "none"
     }
 
-    //aqui se inicia o web-data-viz para entrar
+    //aqui se inicia a API web-data-viz para efetuar login
     if (erro != true) {
         fetch("/usuarios/entrar", {
             method: "POST",

@@ -12,7 +12,7 @@ function listar() {
 function entrar(email, senha) {
    
     var instrucao = `
-        SELECT * FROM cadastro WHERE email = '${email}' AND senha = '${senha}';
+        SELECT * FROM vw_cadastro where email = ${email} AND senha = ${senha};
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -27,6 +27,7 @@ function cadastrar(nome, telefone, email, senha, confirmacao, fkGuia) {
     var instrucao = `
         INSERT INTO cadastro (nome, telefone, email, senha, confirmacao, fkGuia) VALUES ('${nome}', '${telefone}', '${email}', '${senha}', '${confirmacao}', '${fkGuia}');
     `;
+    
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }

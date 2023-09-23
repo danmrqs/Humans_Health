@@ -1,4 +1,5 @@
 function cadastrar() {
+  
   //definindo as variáveis das inputs
     var nome = ipt_nome.value
     var telefone = ipt_telefone.value
@@ -8,6 +9,7 @@ function cadastrar() {
     var fkGuia = 0
     var erro = false
     
+
     //definindo a borda
     ipt_nome.style.border = "solid 2px #000000";
     ipt_telefone.style.border = "solid 2px #000000";
@@ -40,7 +42,6 @@ function cadastrar() {
     } else {
         span_email.style.display = "none"
     }
-
 
     if (senha.length < 8) {
         erro = true

@@ -57,7 +57,7 @@
 
              
 
-            <div class="avisos">
+            <div class="avisos" >
                 <div class="container">
                     <h1>Publicar um aviso</h1>
                     <div class="div-form">
@@ -117,7 +117,7 @@
 
 <script>
 
-
+    var nome = sessionStorage.nome
     var idUsuario = sessionStorage.idUsuario
     ola.innerHTML = `Olá ${nome}!`;
 
@@ -135,35 +135,43 @@
             descricao: form_postagem.descricao.value
         }
 
-        fetch(`/avisos/publicar/${idUsuario}`, {
-            method: "post",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(corpo)
-        }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
-                window.location = "/Comunidade.html";
-                limparFormulario();
-                finalizarAguardar();
-            } else if (resposta.status == 404) {
-                window.alert("Deu 404!");
+        
+            if (corpo == "") {
+                window.alert("pcosncinsuaoj")
             } else {
-                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
-            }
-        }).catch(function (resposta) {
-            console.log("oi cheguei")
-            console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
-        });
+                
+                fetch(`/avisos/publicar/${idUsuario}`, {
+                    method: "post",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(corpo)
+                }).then(function (resposta) {
+        
+                    console.log("resposta: ", resposta);
+        
+                    if (resposta.ok) {
+                        window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
+                        window.location = "/Comunidade.html";
+                        limparFormulario();
+                        finalizarAguardar();
+                    } else if (resposta.status == 404) {
+                        window.alert("Deu 404!");
+                        throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+                    } else {
+                    }  
+                }).catch(function (resposta) {
+                    console.log("oi cheguei")
+                    console.log(`#ERRO: ${resposta}`);
+                    finalizarAguardar();
+                });
+        
+                return false;
+            } 
+        }
+        
 
-        return false;
-
-    }
+    
 
     // function editar(idAviso) {
     //     sessionStorage.ID_POSTAGEM_EDITANDO = idAviso;
@@ -226,7 +234,7 @@
                         var btnDeletar = document.createElement("button");
 
 
-                        spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
+                        spanID.innerHTML = "ID: <b>" + publicacao.idUsuario + "</b>";
                         spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
                         spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
                         divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
@@ -234,7 +242,7 @@
                        
 
                         divPublicacao.className = "publicacao";
-                        spanTitulo.id = "inputNumero" + publicacao.idAviso;
+                        spanTitulo.id = "inputNumero" + publicacao.idUsuario;
                         spanNome.className = "publicacao-nome";
                         spanTitulo.className = "publicacao-titulo";
                         divDescricao.className = "publicacao-descricao";

@@ -10,6 +10,7 @@ body {
   font-family: 'Orienta';
   background-image: url(../img/como-comecar-academia.png);
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 

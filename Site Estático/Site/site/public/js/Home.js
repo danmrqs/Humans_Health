@@ -27,13 +27,15 @@ listarGuias()
 // função do dashboard dos guias
 function listarGuias() {
     
+// definição dos títulos/legendas de cada coluna
     const labels = [
         'Crescer',
         'Definir'   ,
         'Emagrecer',
         
     ];
-    
+
+// definição de cor e formato da dashboard
     var data =  {
         labels: labels,
         datasets: [{
@@ -61,6 +63,7 @@ function listarGuias() {
     };
     const myChart = new Chart( document.getElementById('myChart'), config );
 
+    // função para pegar a informação do usuário, a partir da API, para colocar no gráfico
     fetch(`/medidas/listarGuia/${fkGuia}`) .then(function (response) {
         if (response.ok) {
             response.json().then(function (novoRegistro) {
@@ -68,8 +71,8 @@ function listarGuias() {
                 console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
                 console.log(`Dados atuais do gráfico:`);
                 
-    // for usado para "puxar" as informações do cadastro, para mandar pro dashboard
-    
+
+    // for usado para "puxar" as informações do cadastro, para enviar para o dashboard
                 for (var i = 0; i < novoRegistro.length; i++) {
                     
                     label.push(novoRegistro[i].nomeGuia)

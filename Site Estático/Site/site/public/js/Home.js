@@ -19,7 +19,7 @@ function sortear() {
 var label = []
 var dadosGuia = []
 
-// salv
+// salvando a guia do usuário
 var fkGuia = sessionStorage.fkGuia
 
 listarGuias()
@@ -29,9 +29,9 @@ function listarGuias() {
     
 // definição dos títulos/legendas de cada coluna
     const labels = [
-        'Crescer',
-        'Definir'   ,
         'Emagrecer',
+        'Definir'   ,
+        'Crescer',
         
     ];
 
@@ -72,7 +72,7 @@ function listarGuias() {
                 console.log(`Dados atuais do gráfico:`);
                 
 
-    // for usado para "puxar" as informações do cadastro, para enviar para o dashboard
+    // for usado para "puxar" as informações do cadastro, para enviar para a dashboard
                 for (var i = 0; i < novoRegistro.length; i++) {
                     
                     label.push(novoRegistro[i].nomeGuia)
@@ -86,10 +86,67 @@ function listarGuias() {
     }
     )
     
-    
+    fetch(`/medidas/buscarUltimasMedidas/${fkGuia}`) .then(function (response) {
+        if (response.ok) {
+            response.json().then(function (registroMensal) {
+                
+                console.log(`Dados recebidos: ${JSON.stringify(registroMensal)}`);
+                console.log(`Dados atuais do gráfico:`);
+                console.log("Cheguei")
+                
+
+                for (var i = 0; i < registroMensal.length; i++) {
+                    console.log("Cheguei")
+                    kpiMensal.innerHTML +=  dadosGuia.push(registroMensal[i].contagem)
+                }
+            }
+            ) 
+        }
+    }
+    )
 
 
 }
+
+
+function enviar() {
+
+    var iptEmail = iptEmailFAQ.value
+    var iptTitulo = iptTituloFAQ.value
+    var iptDesc = txtAreaDesc.value
+    
+
+    fetch("/usuarios/enviar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          emailServer: iptEmail,
+          tituloServer: iptTitulo,
+          descricaoServer: iptDesc,  
+        })
+      }).then(function (resposta) {
+  
+        console.log("resposta: ", resposta);
+        
+        swal(
+            "Muito bem!",
+            "Seu formulário foi enviado com sucesso!",
+            "success",
+          );
+        
+      }).catch(function (respostas) {
+        console.log(`#ERRO: ${respostas}`);
+      });
+  
+      return false;
+  
+}
+
+
 
 
 

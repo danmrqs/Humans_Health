@@ -18,18 +18,23 @@ function listarGuias(req, res) {
         console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
         res.status(500).json(erro.sqlMessage);
     });
+   
+    
 }
 
 
-function buscarMedidasEmTempoReal(req, res) {
+
+
+function buscarUltimasMedidas(req, res) {
 
     var fkGuia = req.params.guiaServer;
 
-    console.log(`Recuperando medidas em tempo real`);
+    console.log(`Recuperando ultimas medidas`);
 
-    medidaModel.buscarMedidasEmTempoReal(fkGuia).then(function (resultado) {
-        if (resultado.length > 0) {
-            res.status(200).json(resultado);
+    medidaModel.buscarUltimasMedidas(fkGuia).then(function (registroMensal) {
+        console.log("cheguei")
+        if (registroMensal.length > 0) {
+            res.status(200).json(registroMensal);
         } else {
             res.status(204).send("Nenhum resultado encontrado!")
         }
@@ -42,6 +47,6 @@ function buscarMedidasEmTempoReal(req, res) {
 
 module.exports = {
     listarGuias,
-    buscarMedidasEmTempoReal
+    buscarUltimasMedidas
 
 }

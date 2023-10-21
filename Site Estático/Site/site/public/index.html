@@ -17,15 +17,19 @@
         <div class="header">
             <div class="container">
                 <div class="logo">
-                    <a href="Home.html"><img class="icone" id="iconeLogo" src="img/humans health icone logo.png" alt=""></a>
+                    <a href="#inicio"><img class="icone" id="iconeLogo" src="img/humans health icone logo.png" alt=""></a>
                 </div>
                 <ul>
                     <li>
-                        <a href="Home.html">Home</a>
+                        <a href="#inicio">Home</a>
                     </li>
                     
                     <li>
                         <a href="#tela-sobre">Sobre</a>
+                    </li>
+
+                    <li>
+                        <a href="#sorteio">Sorteio</a>
                     </li>
                     
                     <li>
@@ -34,6 +38,10 @@
                 
                 <li>
                     <a href="#myChart">Gráfico</a>
+                </li>
+
+                <li>
+                    <a href="#faleConosco">Fale Conosco</a>
                 </li>
                 
                 <li>
@@ -45,7 +53,7 @@
     </div>
             
         
-    <div class="nome">
+    <div class="nome" id="inicio">
         <span class="nome">HUMAN'S HEALTH</span>
     </div>
     
@@ -87,7 +95,7 @@
 </div>
 <div class="backgroundWhite">
     <!-- sorteio das imagens usando math.random() -->
-    <div class="sorteio">
+    <div class="sorteio" id="sorteio">
         <h1>Mini Sorteio</h1>
         <div class="h2-sorteio">
             <h2>Esse aqui será seu shape nesse ano:</h2>
@@ -127,8 +135,25 @@
 
     <!-- dashboard para métricas -->
     <canvas id="myChart" class="chartjs"></canvas>
- 
 
+    <div class="kpi" id="kpiMensal">
+
+    </div>
+
+
+    <div class="backgroundWhite">
+        <h1 id="faleConosco">Fale Conosco</h1>
+        <div class="faleConosco">
+            <div class="form">
+               Email <input id="iptEmailFAQ" placeholder="Insira seu email:" >
+               Título <input id="iptTituloFAQ" placeholder="Insira o título da mensagem:">
+               Descrição <textarea id="txtAreaDesc" cols="40" rows="10" maxlength="400"></textarea>
+            </div>
+               <button onclick="enviar()" class="btn-enviar">Enviar</button>
+        </div>
+    </div>
+
+<!-- footer da página -->
 <footer class="footer">
     <div>
         <br>
@@ -136,7 +161,9 @@
       <p>Copyright © 2023 All rights reserved</p>
     </div>
     
-    <a class="voltar" href=""><img src="img/humans health icone logo.png" alt="Retornar ao topo" height="55px" /></a>
+    <a class="voltar" href="#inicio"><img src="img/humans health icone logo.png" alt="Retornar ao topo" height="55px" /></a>
+
+    <!-- links para redes sociais -->
     <div class="redeSocial">
       <ul>
         <li>
@@ -159,6 +186,8 @@
 <!-- arquivo do javascript para não deixar o código bagunçado -->
 <script src="js/Home.js"></script>
 
+<!-- Script da library sweetalert, para como o nome, deixar o alerta bonito -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
 <!-- LEMBRETE: SET INTERVAL -->

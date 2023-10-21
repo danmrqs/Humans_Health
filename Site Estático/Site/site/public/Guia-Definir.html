@@ -274,10 +274,12 @@
 
         <div class="textoInicio">
             <p class="texto">Este é o fim do Guia! Espero que tenha gostado!</p>
-            <p class="texto">Para trocar seu treino, faça uma solicitação pelo nosso <a href="mailto:humanshealth2023@gmail.com?subject=Solicitação para troca de treino">Email</a> ou <a href="https://www.instagram.com/humans_health2023/">Instagram!</a> </p>
             <p class="texto">Não se esqueça que só o exercício não trará bons resultados, é necessário que uma boa alimentação acompanhe os treinos!</p>
+            <div class="trocar">
+                <p class="texto">Deseja trocar de treino?</p>
+                <button onclick="trocarTreino()" class="btn-nav-white">Trocar</button>
+            </div>
         </div>
-        <img src="gifs/gif-mac3a7a2-unscreen.gif;" alt="">
     </div>
 </div>
 
@@ -285,36 +287,10 @@
 
 </body>
 </html>
-<script>
+
+<script src="./js/definir.js">
+
     var nome = sessionStorage.nome
     ola.innerHTML = `Olá ${nome}!`;
 
-    function trocar() {
-        tela01.style.display = 'none'
-        tela02.style.display = 'block'
-        
-    }
-
-    function trocarDois() {
-        tela01.style.display = 'none'
-        tela02.style.display = 'none'
-        tela03.style.display = 'block'
-    }
-
-    function trocarTres() {
-        tela01.style.display = 'none'
-        tela02.style.display = 'none'
-        tela03.style.display = 'none'
-        tela04.style.display = 'block'
-    }
-
-    function fim() {
-        tela01.style.display = 'none'
-        tela02.style.display = 'none'
-        tela03.style.display = 'none'
-        tela04.style.display = 'none'
-        tela05.style.display = 'block'
-    }
-
     
-</script>

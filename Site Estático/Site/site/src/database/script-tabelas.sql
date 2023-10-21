@@ -28,6 +28,4 @@ fk_usuario int,
 foreign key (fk_usuario) references cadastro(idUsuario)
 );
 
-create view vw_guia as select idGuia, nomeGuia, descricaoGuia from guia;
-
 create view vw_cadastro as select idUsuario, nome, telefone, email, senha, fkGuia from cadastro;

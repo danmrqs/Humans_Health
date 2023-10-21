@@ -7,8 +7,8 @@ router.get("/listarGuia/:guiaServer", function (req, res) {
     medidaController.listarGuias(req, res);
 });
 
-router.get("/tempo-real/:fkGuia", function (req, res) {
-    medidaController.buscarMedidasEmTempoReal(req, res);
-})
+router.get("/ultimas/:guiaServer", function (req, res) {
+    medidaController.buscarUltimasMedidas(req, res);
+});
 
 module.exports = router;

@@ -5,6 +5,7 @@
 * {
   margin: 0;
   font-family: 'Orienta';
+  scroll-behavior: auto;
   scroll-behavior: smooth
 }
 
@@ -355,9 +356,90 @@ b{
   
   }
 
+  .kpi { 
+    display: flex;
+    width: 100px;
+    height: 100px;
+    background-color: #3c3737;
+    color: #ffffff;
+    border-radius: 20px;
+    border-color: #757575;
+    border-style: solid;
+    box-shadow: 10px;
+    text-align: center;
+    margin-left: 50px;
+    
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form input {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    padding-left: 40px;
+    background-position: 3%;
+    background-repeat: no-repeat;
+  }
+
+  #txtAreaDesc {
+    border: #000000 solid 3px;
+    border-radius: 10px;
+    
+  }
+
+  #iptEmailFAQ {
+    width: 400px;
+    border: #000000 solid 3px;
+    border-radius: 10px;
+    background-image: url(../img/usuario-icon.png);
+  }
+  
+  #iptTituloFAQ {
+    width: 400px;
+    border: #000000 solid 3px;
+    border-radius: 10px;
+    background-image: url(../img/email.png);
+  }
+
+  .btn-enviar {
+  
+    position: relative;
+    transition: all 0.3s ease-out;
+    color: white;
+    cursor: pointer;
+    height: 50px;
+    width: 160px;
+    font-size: 20px;
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(87, 81, 81);
+    border-style: none;
+    border-radius: 30px;
+  }
+  
+  .btn-enviar:hover {
+    transform: scale(1.1);
+    background-color: rgb(0, 0, 0);
+  }
+
+  .faleConosco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    
+  }
+
   .footer {
     display: flex;
-    height: 68px;
+    height: 69px;
     width: 100%;
     background-color: #272424;
     color: #ffffff; 

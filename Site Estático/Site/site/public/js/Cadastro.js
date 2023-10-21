@@ -59,10 +59,9 @@ function cadastrar() {
         span_confirmacao.style.display = "none"
     }
 
-    //definindo o número de cada guia, para usar na dashboard
+    //definindo o número de cada guia, para direcionar na guia em questão
     if (Emagrecer.checked) {
         fkGuia = 1
-        
     } else if (Definir.checked) {
         fkGuia = 2
     } else if (Crescer.checked) {

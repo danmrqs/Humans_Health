@@ -12,7 +12,7 @@ function listar() {
 function entrar(email, senha) {
    
     var instrucao = `
-        SELECT * FROM vw_cadastro where email = ${email} AND senha = ${senha};
+        SELECT * FROM vw_cadastro where email = '${email}' AND senha = '${senha}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -32,8 +32,29 @@ function cadastrar(nome, telefone, email, senha, confirmacao, fkGuia) {
     return database.executar(instrucao);
 }
 
+function enviar(email, titulo, descricao) {
+   
+    var instrucao = `
+        INSERT INTO faleConosco (email, titulo, descricao) VALUES ('${email}', '${titulo}', '${descricao}')
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function trocarTreino(fkGuia, idUsuario) {
+   
+    var instrucao = `
+    UPDATE cadastro SET fkGuia = '${fkGuia}' where idUsuario = '${idUsuario}'; 
+
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
+    enviar,
+    trocarTreino
 };

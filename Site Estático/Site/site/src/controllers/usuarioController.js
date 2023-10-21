@@ -103,9 +103,88 @@ function cadastrar(req, res) {
     }
 }
 
+function enviar(req, res) {
+    var email = req.body.emailServer;
+    var titulo = req.body.tituloServer;
+    var descricao = req.body.descricaoServer;
+
+    if (email == undefined) {
+        res.status(400).send("Seu email está indefinido!");
+    } else if (titulo == undefined) {
+        res.status(400).send("Sua titulo está indefinida!");
+    } else if (descricao == undefined) {
+        res.status(400).send("Sua desc esta undefined")
+    } else {
+        
+        usuarioModel.enviar(email, titulo, descricao)
+            .then(
+                function (resultado) {
+                    console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                    if (resultado.length == 1) {
+                        console.log(resultado);
+                        res.json(resultado[0]);
+                    } else if (resultado.length == 0) {
+                        res.status(403).send("Email, titulo e/ou desc inválido(s)");
+                    } else {
+                        res.status(403).send("Mais de um usuário com o mesmo login e titulo!");
+                    }
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
+}
+
+
+function trocarTreino(req, res) {
+    var fkGuia = req.body.guiaServer
+    var idUsuario = req.body.idUsuarioServer
+
+    if (fkGuia == undefined) {
+        res.status(400).send("Seu guia está indefinido!");
+    } else if (idUsuario == undefined) {
+        res.status(400).send("Seu id está indefinida!");
+    }
+        
+        usuarioModel.trocarTreino()
+            .then(
+                function (resultado) {
+                    console.log(`\nResultados encontrados: ${resultado.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                    if (resultado.length == 1) {
+                        console.log(resultado);
+                        res.json(resultado[0]);
+                    } else if (resultado.length == 0) {
+                        res.status(403).send("Email, titulo e/ou desc inválido(s)");
+                    } else {
+                        res.status(403).send("Mais de um usuário com o mesmo login e titulo!");
+                    }
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
+
+
+
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar
+    testar,
+    enviar, 
+    trocarTreino
 }
